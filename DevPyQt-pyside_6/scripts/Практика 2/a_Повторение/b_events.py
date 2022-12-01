@@ -9,12 +9,22 @@
 """
 
 from PySide6 import QtWidgets
-
-
+from time import ctime
+#from b import Ui_Form
 class Window(QtWidgets.QWidget):
 
     def __init__(self, parent=None):
         super().__init__(parent)
+        # self.ui = Ui_Form()
+        #self.initUi()
+        self.ui = Ui_Form()
+        self.ui.setupUi(self)
+
+    def event(self, event: QtCore.QEvent):
+        self.ui.plainTextEdit(str(event))
+        print(event)
+        return super().event.event()
+
 
 
 if __name__ == "__main__":
