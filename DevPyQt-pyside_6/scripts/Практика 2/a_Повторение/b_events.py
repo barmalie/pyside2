@@ -23,7 +23,7 @@ class Window(QtWidgets.QWidget):
     def event(self, event: QtCore.QEvent):
         outputstring = f"time = {ctime}, event ={str(event)}"
         self.ui.plainTextEdit.IncertPlainText(str(event))
-        print(event)
+        print(output_string)
         return super().event.event()
 
 
