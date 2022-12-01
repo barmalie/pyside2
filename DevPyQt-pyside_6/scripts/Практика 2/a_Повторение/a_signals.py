@@ -8,7 +8,8 @@
 порядке (задом наперед).
 """
 
-from PySide6 import QtWidgets, QtCore
+from PySide6 import QtWidgets
+#from a_signals import Ui_Form
 
 def revers(str_:str ) -> str:
     return str_[::-1]
@@ -17,8 +18,10 @@ class Window(QtWidgets.QWidget):
 
     def __init__(self, parent=None):
         super().__init__(parent)
+        #self.ui = Ui_Form()
         self.initUi()
         self.initSignals()
+        self.ui.setupUi(self)
 
 
 
@@ -36,10 +39,10 @@ class Window(QtWidgets.QWidget):
         self.setLayout(main_layout)
 
         def initSignals(self) -> None:
-            self.pushButtonMirrror.clicked.connect(lambda : reverse_(self.lineEditInput.text()))
+            self.ui.pushButtonMirrror.clicked.connect(lambda : reverse_(self.lineEditInput.text()))
 
         def set_lineEditMirror(self):
-            self.lineEditMirror.setText(self.lineEditInput.text())
+            self.ui.lineEditMirror.setText(self.ui.lineEditInput.text())
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication()

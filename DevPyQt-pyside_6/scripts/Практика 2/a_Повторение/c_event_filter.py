@@ -9,7 +9,7 @@
 """
 
 from PySide6 import QtWidgets
-
+from a_signals import Ui_form
 
 class Window(QtWidgets.QWidget):
 
