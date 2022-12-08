@@ -58,7 +58,7 @@ class Window(QtWidgets.QWidget):
     # def startGen(self):
     #     self.gen = (val for val in self.text.text())
 
-
+    @QtCore.Slot()
     def setTextEdit(self):
         data = self.text.text()
         if len(data) >1:
