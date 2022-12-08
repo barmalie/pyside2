@@ -55,8 +55,8 @@ class Window(QtWidgets.QWidget):
         self.timer.setInterval((data_spin+1)*100)
 
 
-    def startGen(self):
-        self.gen = (val for val in self.text.text())
+    # def startGen(self):
+    #     self.gen = (val for val in self.text.text())
 
 
     def setTextEdit(self):
