@@ -50,6 +50,7 @@ class Window(QtWidgets.QWidget):
         self.spin.textChanged.connect(self.setTimer)
         self.timer.timeout.connect(self.setTextEdit)
 
+    @QtCore.Slot()
     def setTimer(self):
         data_spin = (int(self.spin.text())
         self.timer.setInterval((data_spin+1)*100)
@@ -71,3 +72,11 @@ class Window(QtWidgets.QWidget):
         #     self.text_1.appendPlainText(next(self.gen))
         # except(StopIteration):
         #     self.text_1.appendPlainText("except")
+
+if __name__ == "__main__":
+    app = QtWidgets.QApplication()
+
+    window = Window()
+    window.show()
+
+    app.exec()
