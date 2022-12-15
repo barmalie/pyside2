@@ -17,7 +17,7 @@
    и значение LCDNumber в QSettings, при перезапуске программы выводить
    в него соответствующие значения
 """
-
+from ui.d_eventfilter_settings import UI_Form
 from PySide6 import QtWidgets
 
 
@@ -25,6 +25,17 @@ class Window(QtWidgets.QWidget):
 
     def __init__(self, parent=None):
         super().__init__(parent)
+        self.ui = UI_Form
+        self.ui.setupUi(self)
+        self.initSignals()
+
+    def initSignals(self):
+
+        self.ui.dial.valueChanged.connect(self.setDataLCD1)
+        self.ui.horizontalSlider.setValue(self.ui.dial.value())
+        self.ui.comboBox.valueChanged.connect
+    def setDataLSD1(self):
+        self.ui.lcdNumber.display(self.ui.dual.value())
 
 
 if __name__ == "__main__":
