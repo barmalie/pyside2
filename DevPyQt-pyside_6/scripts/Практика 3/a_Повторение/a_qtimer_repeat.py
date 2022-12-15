@@ -15,7 +15,8 @@
 """
 
 from PySide6 import QtWidgets
-
+from PySide6 import  QtWidgets
+import requests
 
 class Window(QtWidgets.QWidget):
 
@@ -25,10 +26,9 @@ class Window(QtWidgets.QWidget):
 Использование потока через класс наследованный от QThread
 """
 
-import time
 
-from PySide6 import QtCore, QtWidgets
-import requests
+
+
 
 class Worker(QtCore.QThread):
     progress = QtCore.Signal(int)
