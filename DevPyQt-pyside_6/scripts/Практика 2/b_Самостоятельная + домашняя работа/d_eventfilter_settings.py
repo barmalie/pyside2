@@ -33,11 +33,13 @@ class Window(QtWidgets.QWidget):
 
         self.ui.dial.valueChanged.connect(self.setDataLCD1)
         self.ui.horizontalSlider.setValue(self.ui.dial.value())
-        self.ui.comboBox.valueChanged.connect
+
     def setDataLSD1(self):
         self.ui.lcdNumber.display(self.ui.dual.value())
 
-
+    def setDataLSD2(self):
+        self.ui.lcdNumber.display(self.ui.horizontalSlider.value())
+        self.ui.dial.
 if __name__ == "__main__":
     app = QtWidgets.QApplication()
 
